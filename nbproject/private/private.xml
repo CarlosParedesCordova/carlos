@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/carlos/Documents/CARLOS/parking/routes/index.js</file>
+            <file>file:/home/carlos/Documents/CARLOS/parking/views/hbs/plaza/editar_plaza.hbs</file>
+            <file>file:/home/carlos/Documents/CARLOS/parking/views/partial/vehiculos/vehiculo.hbs</file>
+            <file>file:/home/carlos/Documents/CARLOS/parking/views/partial/principal.hbs</file>
+            <file>file:/home/carlos/Documents/CARLOS/parking/views/usuario.hbs</file>
+            <file>file:/home/carlos/Documents/CARLOS/parking/views/admin.hbs</file>
+            <file>file:/home/carlos/Documents/CARLOS/parking/views/hbs/admin/perfil_admin.hbs</file>
+            <file>file:/home/carlos/Documents/CARLOS/parking/views/partial/tikect/tikectReserva.hbs</file>
+            <file>file:/home/carlos/Documents/CARLOS/parking/controllers/plazaController.js</file>
+            <file>file:/home/carlos/Documents/CARLOS/parking/views/partial/vehiculos/editar_vehiculo.hbs</file>
+            <file>file:/home/carlos/Documents/CARLOS/parking/views/hbs/plaza/registro_plaza.hbs</file>
+            <file>file:/home/carlos/Documents/CARLOS/parking/views/login.hbs</file>
+        </group>
+    </open-files>
+</project-private>

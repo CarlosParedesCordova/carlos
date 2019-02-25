@@ -1,4 +1,6 @@
 module.exports = function (sequelize, Sequelize) {
+    var aux = require('../models/usuario');
+    var Usuario = new aux(sequelize, Sequelize);
     var Estacionamiento = sequelize.define('estacionamiento', {
         id_estacionamiento: {
             autoIncrement: true,
@@ -13,15 +15,12 @@ module.exports = function (sequelize, Sequelize) {
         },
 
         external_id: {
-            type: Sequelize.UUID,
-            defaultValue: Sequelize.UUIDV1
+     type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4
         }
     }, {freezeTableName: true, timestamps: false});
 
-         Estacionamiento.associate = function (models){
-        models.rol.hasOne(models.plaza, {
-            foreignKey: 'id_estacionamineto'
-        });
-    };
+   
+     Estacionamiento.belongsTo(Usuario, {foreignKey: 'idUsuario', constraints: false});
     return Estacionamiento;
 };

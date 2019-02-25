@@ -1,0 +1,238 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <form>
+        <div><dialog open style=" height: 50px;width: 38%;position: inherit;  background-color: black; border: #AD9E66" >  
+                <p style="color:white">-----------------------------Informacio  de Clientes---------------------------</p></dialog>   </div>
+        <table class="display" style="  font-size: 12px; width: 500px; margin:0 auto" id="tablaClientes" ><font></font>
+            <thead>
+                <tr>
+                    <th><h6>Nombre</h6></th>
+                    <th><h6>Vehiculos</h6></th>
+
+                </tr>
+            </thead>
+
+            <tr>
+                <td>{{#each vehiculo}}
+                    <br>  {{usuario.nombre}} {{usuario.apellido}}   </br>
+                    {{/each}}</td>
+
+                <td>{{#each vehiculo}}
+                    <br>{{this.placa}} {{this.marca}}  </br>
+                    {{/each}} </td>
+
+
+            </tr> 
+
+
+        </table>
+
+        <div><dialog open style=" height: 50px;width: 38%;position: inherit;  background-color: black; border: #AD9E66" >  
+                <p style="color:white">-----------------------------Informacio  de Tikects---------------------------</p></dialog>   </div>
+        <table class="display" style="  font-size: 12px; width: 500px; margin:0 auto" id="tablaClientes" ><font></font>
+            <thead>
+                <tr>
+                    <th><h6></h6></th>
+
+
+                </tr>
+            </thead>
+
+            <tr>
+                <td></td>
+
+                <td>{{#each tikect}}
+
+                    <a href="/editar_vista_tikect/{{this.external_id}}" class="btn btn-outline-dark " style="width: 10%; height: 20px; background: #7c8081; font-size: 10px;"><b>Editar</b></a>
+                    <a  style="color: black; text-decoration: underline black; font-size: 13px;" ><b>Hora Inicio:</b></a>  {{this.horaInicio}}
+                    <a   style="color: black; text-decoration: underline black; font-size: 13px;"><b>Hora Fin:</b></a>  {{this.horaFin}}
+                    <a  style="color: black; text-decoration: underline black; font-size: 13px;"><b>Fecha:</b></a>   {{this.fecha}}
+                    {{#if this.estado }}
+                    <a class="btn btn-outline-dark " style="width: 15%; height: 22px; background: green; font-size: 9px; text-transform: uppercase;"><b>activo</b></a>
+                    {{else}}
+                    <a class="btn btn-outline-dark " style="width: 15%; height: 22px; background: red; font-size: 9px; text-transform: uppercase;"><b>Desactivo</b></a>
+                    {{/if}}
+                    {{/each}} </td>
+
+            </tr> 
+
+
+        </table>
+    </form>
+    <form></form>
+    <form></form>
+    <form></form>
+    <form>
+        <div><dialog open style=" top: 20%;height: 50px;width: 38%;position: inherit; background: black;  border: #AD9E66 "  >  
+                <p style="color:white"><a href="/plaza" class="btn btn-outline-dark " style="width: 30%; height: 25px; background:white; font-size: 9px;"><b>Registrar Plazas</b></a>--------------Plazas---------------------------------- </dialog>   </div>
+        <table style="  font-size: 12px; width: 500px; margin:0 auto " id="tablaClientes" ><font></font>
+            <thead>
+                <tr>
+                    <br>
+
+                </tr>
+            </thead>
+
+            <tr>
+                <td></td>
+
+                <td >{{#each plaza}}
+
+                    <a href="/editar_vista_plaza/{{this.external_id}}" class="btn btn-outline-dark " style="width: 20%; height: 25px; background: #7c8081; font-size: 10px;"><b>Editar</b></a>
+                    <a  style="color: black; text-decoration: underline black; font-size: 13px;" >Plaza:</></a> {{NumeroPlaza}}
+                    {{#if this.estado }}
+                    <a class="btn btn-outline-dark " style="width: 15%; height: 22px; background: green; font-size: 10px; text-transform: uppercase;"><b>activo</b></a>
+                    {{else}}
+                    <a class="btn btn-outline-dark " style="width: 15%; height: 22px; background: red; font-size: 9px; text-transform: uppercase;"><b>Desactivo</b></a>
+                    {{/if}}
+                    {{/each}} </td>
+
+            </tr> 
+        </table>
+    </form>
+</table>
+<a href="/login" class="btn btn-outline-dark " style="width: 10%; height: 30px; background: #7c8081; font-size: 10px; text-transform: uppercase;"><b>Cerrar Sesion</b></a>
+
+<script>
+    $(document).ready(function () {
+        $('#tabla').DataTable();
+    });
+</script>
+
+</form>
+<script>
+    $(document).ready(function () {
+        $('#tablaClientes').DataTable({
+            "language": {
+                "decimal": ".",
+                "emptyTable": "No hay datos para mostrar",
+                "info": "",
+                "infoEmpty": "del 0 al 0 (0 total)",
+                "infoFiltered": "",
+                "infoPostFix": "",
+                "thousands": "'",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "Buscar:",
+                "zeroRecords": "No hay resultados",
+                "paginate": {
+                    "first": "",
+                    "last": "",
+                    "next": "",
+                    "previous": ""
+                },
+                "aria": {
+                    "sortAscending": ": ordenar de manera Ascendente",
+                    "sortDescending": ": ordenar de manera Descendente "
+                }
+            }
+
+        });
+    });
+</script>
+<style>
+    .buttons {
+        background-color: #555555; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+</style>
+
+
+<style>
+    body{
+
+        font-family: Arial;
+        background-image: url("/images/bl.jpg");
+    }
+    .b {
+        background-color: #47464B; /* Green */
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        padding: 15px 60px; 
+        width:10%; left: 42% ; 
+        text-align:center;
+        position: relative;
+
+    }
+    form {
+        border: 3px solid #f1f1f1;
+    }
+
+    /* Full-width inputs */
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #47464B;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+
+        width: 100%;
+
+    }
+
+    /* Add a hover effect for buttons */
+    button:hover {
+        opacity: 0.8;
+    }
+
+    /* Extra style for the cancel button (red) */
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #393420;
+    }
+
+    /* Center the avatar image inside this container */
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    /* Avatar image */
+    img.avatar {
+        width: 40%;
+        border-radius: 50%;
+    }
+
+    /* Add padding to containers */
+    .container {
+        padding: 16px;
+    }
+
+    /* The "Forgot password" text */
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+    }
+</style>

@@ -1,0 +1,133 @@
+<body>
+    <div id="main-container">
+        <table>
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>------------------------------------------  Vehiculos ------------------------------------------ </td>
+
+                </tr>
+            </thead>
+            <tr>    
+                <th></th>
+   <td> {{#each vehiculo}}
+                    <p></p> 
+                
+                    <a  style="color: black; text-decoration: underline black;" ><b>Placa:</b></a>  {{this.placa}}
+                    <a  style="color: black; text-decoration: underline black;"><b>Color:</b></a>  {{this.color}}   
+                    <a  style="color: black; text-decoration: underline black;"><b>Marca:</b></a>   {{this.marca}} 
+
+                    {{/each}}</td>
+            </tr> 
+        </table>
+    </div>
+
+
+</body>
+
+<style>
+
+    .buttons {
+        background-color: #555555; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+</style>
+
+
+<style>
+    /*
+          Color fondo: #632432;
+          Color header: 246355;
+          Color borde: 0F362D;
+          Color iluminado: 369681;
+    */
+    body{
+
+        font-family: Arial;
+        background-image: url("/images/a.jpg");
+    }
+
+    #main-container{
+        margin: 20px auto;
+        width: 600px;
+    }
+
+    table{
+        background-color: white;
+        text-align: left;
+        border-collapse: collapse;
+        width: 110%;
+    }
+
+    th{
+        padding: 15px;
+        text-align: center;  
+
+    }
+    td{
+
+        padding: 15px;
+    }
+
+    thead{
+        background-color: infotext;
+
+        color: white;
+    }
+
+    tr:nth-child(even){
+        background-color: #ddd;
+    }
+
+    tr:hover td{
+
+    }
+</style>
+
+
+
+
+
+
+
+
+<style>
+    .buttons {
+        background-color: #555555; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+</style>
+<style type="text/css">
+    .boton_1{
+        text-decoration: none;
+        padding: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: helvetica;
+        font-weight: 300;
+        font-size: 10px;
+        font-style: italic;
+        color: black;
+        background-color: #7c8081;
+        border-radius: 15px;
+
+    }
+    .boton_1:hover{
+        opacity: 0.6;
+        text-decoration: none;
+    }
+</style>

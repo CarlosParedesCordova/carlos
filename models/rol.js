@@ -1,27 +1,20 @@
 module.exports = function (sequelize, Sequelize) {
-    var usuario = require('./usuario');
-    var Usuario = new usuario(sequelize, Sequelize);
     var Rol = sequelize.define('rol', {
-        idRol: {
+        id: {
             autoIncrement: true,
             primaryKey: true,
             type: Sequelize.INTEGER
         },
-        external_id: {
-            type: Sequelize.UUID
-        },
         nombre: {
-            type: Sequelize.STRING(20)}
-     }, {
-        timestamps: false,
-        freezeTableName: true
-    });
-
- Rol.belongsTo(Usuario, {
-        foreignKey: 'idUsuario'
-      
-
-    });
-
+            type: Sequelize.STRING(20)
+        }
+    }, {timestamps: false, 
+        freezeTableName: true});
+    
+    Rol.associate = function (models) {
+        models.rol.hasMany(models.usuario, {
+            foreignKey: 'idRol'});
+    };
+    
     return Rol;
 };

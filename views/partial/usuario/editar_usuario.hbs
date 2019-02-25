@@ -1,0 +1,170 @@
+<script>
+    $(document).ready(function() {
+         $("#nombres").val("{{usuario.nombre}}");   
+         $("#apellidos").val("{{usuario.apellido}}"); 
+         $("#telefono").val("{{usuario.telefono}}");
+         $("#direccion").val("{{usuario.direccion}}");
+         
+  });
+</script>
+<form method="POST" action="/editar_usuario">
+     <div><dialog open style=" height: 50px;width: 11%;position: inherit;  border: #AD9E66" >  <p style="color:black">Editar Usuario</p></dialog>   </div>
+    <div class="container">
+          <font color="White">Nombre</font>
+        <input type="text" style="background: white" placeholder="Nombre" id="nombres" name="nombres" required>
+
+           
+               <font color="white">Apellido</font>
+            <input type="text"  style="background: white" placeholder="Apellido" id="apellidos"  name="apellidos" required>
+
+                  <font color="white">Telefono</font>
+                <input type="text"  style="background: white"  placeholder="Telefono" id="telefono" name="telefono" required>        
+
+
+                      <font color="white">Direccion</font>
+                    <input type="text"  style="background: white"  placeholder="direccion" id="direccion" name="direccion" required>     
+
+
+                             <font color="white">Clave</font>
+                        <input type="password"  style="background: white" placeholder="clave" id="clave" name="clave" >    
+
+                            <button type="submit">Editar Usuario</button>
+
+                            <div class="container">
+                                <a class="b " href="/usuario"> Cancelar</a>
+                            </div>                 
+                            </div>
+                            </form>
+                   
+                            <form id="formulario" method="POST" action="/guardar_foto" enctype="multipart/form-data">
+                                 <div><dialog open style=" height: 50px;width: 11%;position: inherit;  border: #AD9E66" >  <p style="color:black">Editar Inmagen</p></dialog>   </div>
+                                <input type="hidden" value="{{usuario.external_id}}" id="external_imagen" name="external_foto"/>
+                                <div >
+                                    <div >
+                                        <input type="file" class="form-control-plaintext" name="archivo">
+                                    </div>
+                                </div>
+
+
+                                <div class="container">
+
+                                    <button type="submit">Guardar</button>
+                                </div>   
+                            </form>
+
+
+                            <style>
+   body{
+
+                            font-family: Arial;
+                            background-image: url("/images/j.jpg");
+                        }
+                                .b {
+                                    background-color: #47464B; /* Green */
+                                    border: none;
+                                    color: white;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    padding: 15px 60px; 
+                                    width:10%; left: 42% ; 
+                                    text-align:center;
+                                    position: relative;
+
+                                }
+                                form {
+                                    border: 3px solid #f1f1f1;
+                                }
+
+                                /* Full-width inputs */
+                                input[type=text], input[type=password] {
+                                    width: 100%;
+                                    padding: 8px 20px;
+                                    margin: 2px ;
+                                    display: inline-block;
+                                    border: 1px solid #ccc;
+                                    box-sizing: border-box;
+                                }
+
+                                /* Set a style for all buttons */
+                                button {
+                                    background-color: #47464B;
+                                    color: white;
+                                    padding: 14px 20px;
+                                    margin: 8px 0;
+                                    border: none;
+
+                                    width: 100%;
+
+                                }
+                                #gg{
+                                    background-color: #AD9E66;
+                                    color: white;
+                                    padding: 14px 20px;
+                                    margin: 8px 0;
+                                    border: none;
+
+
+
+                                }
+
+                                /* Add a hover effect for buttons */
+                                button:hover {
+                                    opacity: 0.8;
+                                }
+
+                                /* Extra style for the cancel button (red) */
+                                .cancelbtn {
+                                    width: auto;
+                                    padding: 10px 18px;
+                                    background-color: #393420;
+                                }
+
+                                /* Center the avatar image inside this container */
+                                .imgcontainer {
+                                    text-align: center;
+                                    margin: 24px 0 12px 0;
+                                }
+
+                                /* Avatar image */
+                                img.avatar {
+                                    width: 40%;
+                                    border-radius: 50%;
+                                }
+
+                                /* Add padding to containers */
+                                .container {
+                                    padding: 16px;
+                                }
+
+                                /* The "Forgot password" text */
+                                span.psw {
+                                    float: right;
+                                    padding-top: 16px;
+                                }
+
+                                /* Change styles for span and cancel button on extra small screens */
+                                @media screen and (max-width: 300px) {
+                                    span.psw {
+                                        display: block;
+                                        float: none;
+                                    }
+                                    .cancelbtn {
+                                        width: 100%;
+                                    }
+                                }
+                            </style>
+
+
+                            <style>
+                                .buttons {
+                                    background-color: #555555; /* Green */
+                                    border: none;
+                                    color: white;
+                                    padding: 10px 32px;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    display: inline-block;
+                                    font-size: 16px;
+                                }
+
+                            </style>

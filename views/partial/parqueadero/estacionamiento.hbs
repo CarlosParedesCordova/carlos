@@ -1,0 +1,52 @@
+<form method="POST" action="/reserva">
+<table class="table table-dark text-center" style="  font-size: 12px; width: 700px; ">
+    <thead>
+        <tr>
+            <th scope="col">Plaza</th>
+
+            <th scope="col"><h6><b>Estado</b></h6></th>
+            <th scope="col"><h6><b>Reserva</b></h6></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each plaza }}
+        <tr>
+            <td><h5>{{this.NumeroPlaza}}</h5></td>
+            <td> 
+                {{#if this.estado }}
+                Plaza Libre
+                {{else}}
+                Plaza Ocupada
+                {{/if}}
+                <td><a  class="btn btn-outline-dark " style="width: 40%; height: 20px; background: #E8EEF4; font-size: 10px;"> <b>Reservar</b> </a></td>
+             
+              
+                            
+        </tr>
+        {{/each}}
+
+
+    </tbody>
+
+</form>
+
+
+</table>
+<div class="container">
+    <a class="buttons " href="/usuario"> Cancelar</a>
+</div>                 
+<style>
+
+    .buttons {
+        background-color: #555555; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+
+    }
+
+</style>

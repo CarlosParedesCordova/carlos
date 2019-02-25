@@ -1,0 +1,214 @@
+{{#if info}}
+<div class="alert alert-danger">
+    {{info}}
+
+</div>
+{{/if}}
+<body>
+    <div id="main-container">
+        
+        <table >
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>-------------  Información del Usuario  -------------  </td>
+
+                </tr>
+            </thead>
+
+            <tr>
+
+                <td>Foto</td>
+                <td>  <image src="./images/fotos_usuarios/{{usuario.foto}}" style="width:30px; height: 30px; border-radius: 100%;"></td>
+            </tr>
+            <tr>
+
+                <td>Nombre</td>
+                <td>{{nombre}}</td>
+            </tr>
+            <tr>
+
+                <td>Telefono</td>
+                <td>{{usuario.telefono}}</td>
+            </tr>
+            <tr>
+
+                <td>Direccion</td>
+                <td>{{usuario.direccion}}</td>
+            </tr>
+
+
+
+        </table>
+    </div>
+    
+   
+ <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script><font></font>
+<script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script><font></font>
+
+    <div id="main-container">
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>-------------------------- Información Vehicular del Usuario  -------------------------- </td>
+
+                </tr>
+            </thead>
+            <tr>    
+                <th></th>
+
+                <td> {{#each carro}}
+                    <p></p> 
+                    <a href="/vista_editar/{{this.external_id}}" class="btn btn-outline-dark " style="width: 10%; height: 20px; background: #7c8081; font-size: 10px;"><b>Editar</b></a>
+                    <a  style="color: black; text-decoration: underline black; font-size: 13px;" ><b>Placa:</b></a>  {{this.placa}}
+                    <a  style="color: black; text-decoration: underline black; font-size: 13px;"><b>Color:</b></a>  {{this.color}}   
+                    <a  style="color: black; text-decoration: underline black; font-size: 13px;"><b>Marca:</b></a>   {{this.marca}} 
+                    <a  style="color: black; text-decoration: underline black; font-size: 13px;"><b>Estado:</b></a> 
+                    {{#if this.estado }}
+                <a class="btn btn-outline-dark " style="width: 10%; height: 22px; background: green; font-size: 10px; text-transform: uppercase;"><b>activo</b></a>
+                    {{else}}
+               <a class="btn btn-outline-dark " style="width: 13%; height: 22px; background: red; font-size: 10px; text-transform: uppercase;"><b>Desactivo</b></a>
+                    {{/if}}
+                    {{/each}}</td>
+
+            </tr> 
+        </table>
+    </div>
+
+<div id="main-container">
+    <table>
+        <thead>
+            <tr>
+                <td></td>
+                <td>------------------------------------ Tikects del Usuario  ------------------------------------------ </td>
+            </tr>
+        </thead>
+
+        <tr>    
+            <th></th>
+            <td>{{#each tikect}}
+                <a href="/editar_vista_tikect/{{this.external_id}}" class="btn btn-outline-dark " style="width: 10%; height: 20px; background: #7c8081; font-size: 10px;"><b>Editar</b></a>
+                <a  style="color: black; text-decoration: underline black; font-size: 13px;" >Hora Inicio:</></a>  {{this.horaInicio}}
+                <a   style="color: black; text-decoration: underline black; font-size: 13px;"><b>Hora Fin:</b></a>  {{this.horaFin}}
+                <a  style="color: black; text-decoration: underline black; font-size: 13px;"><b>Fecha:</b></a>   {{this.fecha}}
+                {{#if this.estado }}
+                <a class="btn btn-outline-dark " style="width: 10%; height: 22px; background: green; font-size: 10px; text-transform: uppercase;"><b>activo</b></a>
+                {{else}}
+                <a class="btn btn-outline-dark " style="width: 13%; height: 22px; background: red; font-size: 10px; text-transform: uppercase;"><b>Desactivo</b></a>
+                {{/if}}
+                {{/each}} </td>
+        </tr> 
+    </table>
+</div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $('#tabla').DataTable();
+    });
+</script>
+<style>
+
+    .buttons {
+        background-color: #555555; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+
+    }
+
+</style>
+
+
+<style>
+    .boton_1{
+        text-decoration: none;
+        padding: 3px;
+        font-family: helvetica;
+        font-weight: 300;
+        font-size: 9px;
+        font-style: italic;
+        color: black;
+        background-color: #7c8081;
+        border-radius: 15px;
+        width: 0%;
+    }
+    .boton_1:hover{
+        opacity: 0.6;
+        text-decoration: none;
+
+    }
+    /*
+          Color fondo: #632432;
+          Color header: 246355;
+          Color borde: 0F362D;
+          Color iluminado: 369681;
+    */
+    body{
+
+        font-family: Arial;
+        background-image: url("/images/a.jpg");
+    }
+
+    #main-container{
+        margin: 20px auto;
+        width: 600px;
+    }
+
+    table{
+        background-color: white;
+        text-align: left;
+        border-collapse: collapse;
+        width: 110%;
+    }
+
+    th{
+        padding: 15px;
+        text-align: center;  
+
+    }
+    td{
+
+        padding: 15px;
+    }
+
+    thead{
+        background-color: infotext;
+
+        color: white;
+    }
+
+    tr:nth-child(even){
+        background-color: #ddd;
+    }
+
+    tr:hover td{
+
+    }
+</style>
+
+
+
+
+
+
+
+
+<style>
+    .buttons {
+        background-color: #555555; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+</style>

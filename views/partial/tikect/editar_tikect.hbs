@@ -1,0 +1,136 @@
+<script>
+    $(document).ready(function () {
+        $("#horaInicio").val("{{tikect.horaInicio}}");
+        $("#horaFin").val("{{tikect.horaFin}}");
+        $("#fecha").val("{{tikect.fecha}}");
+        $("#estado").val("{{tikect.estado}}");
+    });
+</script>
+
+<form method="POST" action="/editar/tikect/{{tikect.external_id}}">
+    <div class="container">
+        
+        {{flash}}
+        <font color="white">Hora de Entrada</font>
+        <input type="time" placeholder="Ingrese Hora de Inicio " id="horaInicio" name="horaInicio" >
+
+            <font color="white">Hora de Salida</font>
+            <input type="time" placeholder="Ingrese Hora de Fin " id="horaFin"  name="horaFin">
+
+
+                <font color="white">Fecha</font>
+                <input type="date" placeholder="Ingrese la Fecha" id="fecha"  name="fecha">
+
+
+
+                    <font color="white"> Estado</font>
+                    <select name="estado" id="estado">
+                        <option value="true">Activo</option>
+                        <option value="false">Desactivo</option>
+                    </select>
+
+                    <button type="submit">Editar Tikect</button>
+
+                    <div class="container">
+                        <a class="b " href="/usuario"> Cancelar</a>
+                    </div>                 
+
+                    </div>
+
+
+
+
+
+                    </form>
+                    <style>
+                        body{
+
+                            font-family: Arial;
+                            background-image: url("/images/j.jpg");
+                        }
+                        .b {
+                            background-color: #47464B; /* Green */
+                            border: none;
+                            color: white;
+                            text-align: center;
+                            text-decoration: none;
+                            padding: 15px 60px; 
+                            width:10%; left: 42% ; 
+                            text-align:center;
+                            position: relative;
+
+                        }
+                        form {
+                            border: 3px solid #f1f1f1;
+                        }
+
+                        /* Full-width inputs */
+                        input[type=text], input[type=password] {
+                            width: 100%;
+                            padding: 12px 20px;
+                            margin: 8px 0;
+                            display: inline-block;
+                            border: 1px solid #ccc;
+                            box-sizing: border-box;
+                        }
+
+                        /* Set a style for all buttons */
+                        button {
+                            background-color: #47464B   ;
+                            color: white;
+                            padding: 14px 20px;
+                            margin: 8px 0;
+                            border: none;
+
+                            width: 100%;
+
+                        }
+
+                        /* Add a hover effect for buttons */
+                        button:hover {
+                            opacity: 0.8;
+                        }
+
+                        /* Extra style for the cancel button (red) */
+                        .cancelbtn {
+                            width: auto;
+                            padding: 10px 18px;
+                            background-color: #393420;
+                        }
+
+                        /* Center the avatar image inside this container */
+                        .imgcontainer {
+                            text-align: center;
+                            margin: 24px 0 12px 0;
+                        }
+
+                        /* Avatar image */
+                        img.avatar {
+                            width: 40%;
+                            border-radius: 50%;
+                        }
+
+                        /* Add padding to containers */
+                        .container {
+                            padding: 16px;
+                        }
+
+                        /* The "Forgot password" text */
+                        span.psw {
+                            float: right;
+                            padding-top: 16px;
+                        }
+
+                        /* Change styles for span and cancel button on extra small screens */
+                        @media screen and (max-width: 300px) {
+                            span.psw {
+                                display: block;
+                                float: none;
+                            }
+                            .cancelbtn {
+                                width: 100%;
+                            }
+                        }
+                    </style>
+
+

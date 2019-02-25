@@ -1,9 +1,8 @@
 module.exports = function (sequelize, Sequelize) {
-    var usuario = require('./usuario');
+    var usuario = require('../models/usuario');
     var Usuario = new usuario(sequelize, Sequelize);
     var Vehiculo = sequelize.define('vehiculo', {
         placa: {
-
             primaryKey: true,
             type: Sequelize.STRING
         },
@@ -14,21 +13,21 @@ module.exports = function (sequelize, Sequelize) {
             type: Sequelize.STRING(50)
         },
         external_id: {
-            type: Sequelize.UUID,
-            defaultValue: Sequelize.UUIDV1
+            type: Sequelize.UUID
+        }, estado: {
+            type: Sequelize.BOOLEAN,
+            defaultValue: true
         }
 
-    }, {freezeTableName: true,
-        createdAt: "fecha_registro",
-        updateAt: 'fecha_modificacion'
+    }, {   paranoid: true,
+        freezeTableName: true,
+        tableName: 'vehiculo'
     });
+    
 
-    Vehiculo.belongsTo(Usuario, {
-        foreignKey: 'idUsuario'
-      
+    Vehiculo.belongsTo(Usuario, {foreignKey: 'idUsuario',constraints: false
 
     });
 
     return Vehiculo;
 };
-

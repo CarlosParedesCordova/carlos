@@ -1,0 +1,63 @@
+<div class="login">
+  
+    <div class="login__form">
+     
+{{#if error}}
+        <div class="alert alert-danger"> <h1 style="color:#FF0000">{{correo_repetido}}</h1></div>
+        {{/if}}
+
+
+        <form  method="POST" action="/registro/guardar">
+
+            <div class="login__row">
+
+                <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                    <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                </svg>
+                <input type="text" class="login__input name" name="nombres" id="nombres" placeholder="Nombre" />
+            </div>
+
+
+            <div class="login__row">
+                <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                    <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                </svg>
+                <input type="text" class="login__input name" name="apellidos" id="apellidos" placeholder="Apelldio"  />
+            </div>
+
+            <div class="login__row">
+                <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                    <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                </svg>
+                <input type="text" class="login__input name" name="direccion" id="direccion" placeholder="direccion"/>
+            </div>
+
+            <div class="login__row">
+                <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                    <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                </svg>
+                <input type="text" class="login__input name" name="telefono" id="telefono" placeholder="telefono"/>
+            </div>
+            <div class="login__row">
+                <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                    <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                </svg>
+                <input type="email" class="login__input name" name="correo" id="correo" placeholder="correo" />
+            </div>
+
+
+            <div class="login__row">
+                <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                    <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+                </svg>
+                <input type="password" name="clave" id="demo-pass"class="login__input pass" placeholder="Contraseña"/>
+            </div>
+
+            <button type="submit" class="login__submit">Registrar</button>
+        </form>
+
+        <p class="login__signup"> <a href="/login">Inicio Sesion</a></p>
+        <p class="login__signup"> <a href="/">Pagina Principal</a></p>
+    </div>
+     
+</div>

@@ -1,0 +1,16 @@
+{
+    "development": {
+        "username": "carlos",
+        "password": "12345",
+        "database": "Parking",
+        "host": "localhost",
+        "dialect": "mysql"
+    },
+    "staging": {
+        "username": "carlos",
+        "password": "12345",
+        "database": "Paking",
+        "host": "localhost",
+        "dialect": "mysql"
+    }
+}

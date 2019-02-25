@@ -1,6 +1,6 @@
 module.exports = function (sequelize, Sequelize) {
-    var usuario = require('./usuario');
-    var Usuario = new usuario(sequelize, Sequelize);
+    var persona = require('../models/usuario');
+    var Persona = new persona(sequelize, Sequelize);
     var Cuenta = sequelize.define('cuenta', {
         id: {
             autoIncrement: true,
@@ -8,32 +8,30 @@ module.exports = function (sequelize, Sequelize) {
             type: Sequelize.INTEGER
         },
         correo: {
-            type: Sequelize.STRING(30)
-
+            type: Sequelize.STRING(50)
         },
         clave: {
-            type: Sequelize.STRING(30)
+            type: Sequelize.STRING
         },
         external_id: {
             type: Sequelize.UUID,
-            defaultValue: Sequelize.UUIDV1
+            defaultValue: Sequelize.UUIDV4
         },
         estado: {
             type: Sequelize.BOOLEAN,
             defaultValue: true
+        },
+        token:{
+            type: Sequelize.TEXT
         }
 
-    }, {freezeTableName: true,
-        createdAt: "fecha_registro",
-        updateAt: 'fecha_modificacion'
+    }, {freezeTableName: true
     });
-    Cuenta.belongsTo(Usuario, {
-        foreignKey: 'idUsuario'
-      
 
+    Cuenta.belongsTo(Persona, {
+        foreignKey: 'idUsuario',
+        constraints: false
     });
 
     return Cuenta;
 };
-
-

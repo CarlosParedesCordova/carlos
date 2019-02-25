@@ -1,33 +1,32 @@
 module.exports = function (sequelize, Sequelize) {
-    var estacionamiento = require('./estacionamiento');
+    var estacionamiento = require('../models/estacionamiento');
     var Estacionamiento = new estacionamiento(sequelize, Sequelize);
     var Plaza = sequelize.define('plaza', {
         id_plaza: {
             autoIncrement: true,
             primaryKey: true,
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER.UNSIGNED
         },
         estado: {
             type: Sequelize.BOOLEAN,
             defaultValue: true
         },
-
+        NumeroPlaza: {
+            type: Sequelize.STRING(50)
+        },
         external_id: {
             type: Sequelize.UUID,
-            defaultValue: Sequelize.UUIDV1
+            defaultValue: Sequelize.UUIDV4
         }
-    }, {freezeTableName: true, timestamps: false});
-
-
-    Plaza.associate = function (models) {
-        models.rol.hasOne(models.plaza, {
+    }, {freezeTableName: true,
+        timestamps: false});
+    
+  Plaza.associate = function (models) {
+        models.plaza.hasMany(models.tikect, {
             foreignKey: 'id_plaza'
         });
     };
 
-    Plaza.belongsTo(Estacionamiento, {
-        foreignKey: 'id_estacionamiento'
 
-    });
     return Plaza;
 };
